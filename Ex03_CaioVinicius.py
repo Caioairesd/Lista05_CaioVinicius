@@ -2,17 +2,25 @@
 Se ele digitar “ s ", diga para inserir outro número e continuar adicionando números e somando até que ele não respondam “ s ".
 Depois que o loop for interrompido, exiba o total."""
 
-num = int(input("Insira um número:"))
-num2 = int(input("Insira outro número:"))
-resposta = input("Você deseja adiconar mais um número?")
+resposta = 's'
 
-soma = num + num2
+try:
+    num1 = int(input("Insira um número: "))
+    num2 = int(input("Insira outro número: "))
+    soma = num1 + num2
 
-while resposta != 's':
+    while resposta == 's':
+  
+        resposta = input("Você deseja adiconar mais um número?\nS/s para sim ou N/n para Não: ").lower()
+        if resposta == 's':
+            num3 = int(input("Insira mais um valor: "))
+            soma += num3
+
+
+    print("A soma total é: {}".format(soma)) 
+    print("----------------------------------------------------")
+    print("Programa finalizado!")
+    print("Caio Vinicius Aires da Silva")
     
-
-
-
-print("----------------------------------------------------")
-print("Programa finalizado!")
-print("Caio Vinicius Aires da Silva")
+except:
+    print("Valor inserido inválido!")
